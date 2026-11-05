@@ -1,0 +1,130 @@
+# 正常用例
+
+# name: given
+start 0 0
+goal 4 4
+expect_cost 7
+grid
+S 1 1 8 1
+1 8 3 1 1
+1 8 1 8 1
+1 1 1 8 1
+8 8 1 1 E
+
+# name: cheap_detour_beats_direct
+start 0 0
+goal 2 2
+expect_cost 3
+grid
+S 9 1
+1 9 1
+1 1 E
+
+# name: long_cheap_route_beats_short_expensive
+start 0 0
+goal 0 4
+expect_cost 5
+grid
+S 9 9 9 E
+1 1 1 1 1
+
+# name: uniform_weight_9
+start 0 0
+goal 3 3
+expect_cost 45
+grid
+S 9 9 9
+9 9 9 9
+9 9 9 9
+9 9 9 E
+
+# name: min_weight_2
+start 0 0
+goal 2 3
+expect_cost 8
+grid
+S 2 2 2
+2 2 2 2
+2 2 2 E
+
+# 边界用例
+
+# name: start_equals_goal
+start 0 0
+goal 0 0
+expect_cost 0
+grid
+S 3
+2 E
+
+# name: single_cell_start_equals_goal
+start 0 0
+goal 0 0
+expect_cost 0
+grid
+S
+
+# name: adjacent_goal_is_free
+start 0 0
+goal 0 1
+expect_cost 0
+grid
+S E
+
+# name: one_step_expensive_terrain
+start 0 0
+goal 0 2
+expect_cost 5
+grid
+S 5 E
+
+# name: single_row_costs
+start 0 0
+goal 0 4
+expect_cost 9
+grid
+S 2 3 4 E
+
+# name: single_column_costs
+start 0 0
+goal 3 0
+expect_cost 9
+grid
+S
+1
+8
+E
+
+# name: goal_enclosed_by_walls
+start 0 0
+goal 2 2
+expect_cost -1
+grid
+S 1 1
+1 X X
+1 X E
+
+# name: start_enclosed_by_walls
+start 0 0
+goal 1 1
+expect_cost -1
+grid
+S X
+X E
+
+# name: wall_row_blocks_path
+start 0 0
+goal 2 2
+expect_cost -1
+grid
+S 1 1
+X X X
+1 1 E
+
+# name: diagonal_only_is_unreachable
+start 0 0
+goal 1 1
+expect_cost -1
+grid
+S X
+X E
