@@ -1,0 +1,190 @@
+# 正常用例
+
+# name: given
+start 0 0
+goal 3 4
+expect_len 8
+grid
+S . . X .
+. X . . .
+. X . X .
+. . . X E
+X X . . .
+
+# name: open_3x3
+start 0 0
+goal 2 2
+expect_len 5
+grid
+S . .
+. . .
+. . E
+
+# name: open_5x5
+start 0 0
+goal 4 4
+expect_len 9
+grid
+S . . . .
+. . . . .
+. . . . .
+. . . . .
+. . . . E
+
+# name: detour_around_wall
+start 0 0
+goal 2 4
+expect_len 7
+grid
+S . X . X
+X . X . X
+. . . . E
+
+# name: winding_maze_with_dead_end
+start 0 0
+goal 4 4
+expect_len 15
+grid
+S . . . X
+X X X . X
+. . . . .
+. X X X X
+. . . . E
+
+# name: non_square_with_gap
+start 0 0
+goal 3 6
+expect_len 10
+grid
+S . . X . . .
+. . . X . X .
+X X . X . X .
+. . . . . . E
+
+# name: wall_with_single_gap
+start 5 0
+goal 0 5
+expect_len 11
+grid
+. . . . . E
+. . . . . .
+X X X X X .
+. . . . . .
+. . . . X .
+S . . . . .
+
+# 边界用例
+
+# name: start_equals_goal
+start 0 0
+goal 0 0
+expect_len 1
+grid
+S . .
+. . E
+
+# name: single_cell_start_equals_goal
+start 0 0
+goal 0 0
+expect_len 1
+grid
+S
+
+# name: adjacent_cells
+start 0 0
+goal 0 1
+expect_len 2
+grid
+S E .
+. . .
+
+# name: single_row_corridor
+start 0 0
+goal 0 5
+expect_len 6
+grid
+S . . . . E
+
+# name: single_column_corridor
+start 0 0
+goal 5 0
+expect_len 6
+grid
+S
+.
+.
+.
+.
+E
+
+# name: goal_enclosed_by_walls
+start 0 0
+goal 3 2
+expect_len 0
+grid
+S . . .
+. . . .
+. X X X
+. X E X
+
+# name: start_enclosed_by_walls
+start 0 0
+goal 2 3
+expect_len 0
+grid
+S X . .
+X . . .
+. . . E
+
+# name: full_wall_row_blocks_path
+start 0 0
+goal 2 2
+expect_len 0
+grid
+S . .
+X X X
+. . E
+
+# name: diagonal_only_is_unreachable
+start 0 0
+goal 1 1
+expect_len 0
+grid
+S X
+X E
+
+# name: start_and_goal_on_different_sides_of_full_wall
+start 0 1
+goal 3 1
+expect_len 0
+grid
+. S .
+X X X
+. X .
+. E .
+X X X
+
+# name: random_20x20_dense_walls
+start 0 0
+goal 19 19
+grid
+S . . . X X . . . . . . . . X . X . . .
+. . X . . . . . . X . . . . . . . X . .
+. . . . X . . . . . . . . . . X X X X .
+. X . . . X . . . . . . . . . . . . . .
+. . . X . . . . . . . . . . . . . . . .
+X . . . . . . . . X . . X . . . X X . .
+X . X . . . . . X . . . . . . X X . . .
+. X . . . . . . . . X X X . X . . . X .
+. . . X . . . X . . . . . X . X . X . .
+. . X . . X . . . . X . . . . X . . . .
+. . . . . X . . . . X . . . . . . . . .
+X . . . X . . . X . . . X . . X . . . X
+. . . . . . . X . . . . X X X X . . . .
+. . . . . . X . . . . . . . . . . . . X
+. . . . X . . . . . . . X . X X . . . X
+. . . X . X X . . . . . . X X . . . . .
+. . . . . . . . . . . X . . . . . . . .
+. . X . . X . . . . . . X . X . . . . .
+. . X . . X . . X X . . . . . . . . X .
+X . . . X . . X . . . . X . X . . . . E
