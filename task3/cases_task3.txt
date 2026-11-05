@@ -1,0 +1,39 @@
+# 正常用例
+
+# name: given
+tree {"tree_structure": {"is_maximizing_player": true, "children": [{"is_maximizing_player": false, "children": [{"is_maximizing_player": true, "children": [{"value": 3}, {"value": 5}]}, {"is_maximizing_player": true, "children": [{"value": 6}, {"value": 9}]}]}, {"is_maximizing_player": false, "children": [{"is_maximizing_player": true, "children": [{"value": 6}, {"value": 9}]}, {"is_maximizing_player": true, "children": [{"value": 1}, {"value": 2}]}]}]}}
+expect 5
+
+# name: negative_values
+tree {"tree_structure": {"is_maximizing_player": true, "children": [{"is_maximizing_player": false, "children": [{"is_maximizing_player": true, "children": [{"value": -5}, {"value": -3}]}, {"is_maximizing_player": true, "children": [{"value": -9}, {"value": -7}]}]}, {"is_maximizing_player": false, "children": [{"is_maximizing_player": true, "children": [{"value": -2}, {"value": -8}]}, {"is_maximizing_player": true, "children": [{"value": -6}, {"value": -4}]}]}]}}
+expect -4
+
+# name: all_leaves_equal
+tree {"tree_structure": {"is_maximizing_player": true, "children": [{"is_maximizing_player": false, "children": [{"is_maximizing_player": true, "children": [{"value": 2}, {"value": 2}]}, {"is_maximizing_player": true, "children": [{"value": 2}, {"value": 2}]}]}, {"is_maximizing_player": false, "children": [{"is_maximizing_player": true, "children": [{"value": 2}, {"value": 2}]}]}]}}
+expect 2
+
+# name: max_then_min_one_level
+tree {"tree_structure": {"is_maximizing_player": true, "children": [{"is_maximizing_player": false, "children": [{"value": 3}, {"value": 8}, {"value": 1}]}, {"is_maximizing_player": false, "children": [{"value": 4}, {"value": 6}]}]}}
+expect 4
+
+# 边界用例
+
+# name: root_is_leaf
+tree {"tree_structure": {"value": 7}}
+expect 7
+
+# name: single_child_chain
+tree {"tree_structure": {"is_maximizing_player": true, "children": [{"is_maximizing_player": false, "children": [{"is_maximizing_player": true, "children": [{"is_maximizing_player": false, "children": [{"is_maximizing_player": true, "children": [{"value": 9}]}]}]}]}]}}
+expect 9
+
+# name: root_with_single_leaf_child
+tree {"tree_structure": {"is_maximizing_player": true, "children": [{"value": -4}]}}
+expect -4
+
+# name: min_node_with_single_leaf
+tree {"tree_structure": {"is_maximizing_player": true, "children": [{"is_maximizing_player": false, "children": [{"value": 5}]}, {"is_maximizing_player": false, "children": [{"value": 2}]}]}}
+expect 5
+
+# name: zero_values
+tree {"tree_structure": {"is_maximizing_player": true, "children": [{"is_maximizing_player": false, "children": [{"value": 0}, {"value": 0}]}]}}
+expect 0
