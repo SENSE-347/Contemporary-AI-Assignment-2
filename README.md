@@ -32,30 +32,29 @@ pip install matplotlib==3.10.8 scipy==1.17.1
 
 .
 ├── task1/
-│ ├── maze_astar_task1.py 题目一：A* 实现
-│ ├── test_maze_task1.py 题目一：测试程序
-│ └── cases_task1.txt 题目一：测试用例
+│   ├── maze_astar_task1.py          题目一：A* 实现
+│   ├── test_maze_task1.py           题目一：测试程序
+│   └── cases_task1.txt              题目一：测试用例
 ├── task2/
-│ ├── weighted_astar_task2.py 题目二：加权 A* 基础版本（题目要求的实现）
-│ ├── test_weighted_task2.py 题目二：基础版本的测试程序
-│ ├── cases_task2.txt 题目二：测试用例
-│ ├── extraMethod_task2.py 题目二拓展：五种启发函数与 A* 搜索
-│ ├── extraTest_task2.py 题目二拓展：实验运行程序
-│ ├── extraTest_task2_results.md 题目二拓展：运行结果（由 extraTest_task2.py 生成）
-│ └── extraTest_task2.png 题目二拓展：运行结果图表（由 extraTest_task2.py 生成）
+│   ├── weighted_astar_task2.py      题目二：加权 A* 基础版本（题目要求的实现）
+│   ├── test_weighted_task2.py       题目二：基础版本的测试程序
+│   ├── cases_task2.txt              题目二：测试用例
+│   ├── extraMethod_task2.py         题目二拓展：五种启发函数与 A* 搜索
+│   ├── extraTest_task2.py           题目二拓展：实验运行程序
+│   ├── extraTest_task2_results.md   题目二拓展：运行结果（由 extraTest_task2.py 生成）
+│   └── extraTest_task2.png          题目二拓展：运行结果图表（由 extraTest_task2.py 生成）
 ├── task3/
-│ ├── alphabeta_task3.py 题目三：Minimax 与 Alpha-beta 实现
-│ ├── test_alphabeta_task3.py 题目三：测试程序
-│ └── cases_task3.txt 题目三：测试用例
+│   ├── alphabeta_task3.py           题目三：Minimax 与 Alpha-beta 实现
+│   ├── test_alphabeta_task3.py      题目三：测试程序
+│   └── cases_task3.txt              题目三：测试用例
 └── task4/
-├── treasure_game_task4.py 题目四：距离矩阵、博弈状态、搜索与统计函数
-├── test_treasure_game_task4.py 题目四：正确性检查与实验程序
-├── test_treasure_game_task4_results.md 题目四：运行结果（由上一程序生成）
-├── test_treasure_game_task4.png 题目四：运行结果图表（由上一程序生成）
-├── tt_h4_no_effect_task4.py 题目四：置换表在 H=4 时无效果的原因探究
-├── tt_h4_no_effect_task4_results.md 探究结果（由上一程序生成）
-└── tt_h4_no_effect_task4.png 探究结果图表（由上一程序生成）
-
+    ├── treasure_game_task4.py                 题目四：距离矩阵、博弈状态、搜索与统计函数
+    ├── test_treasure_game_task4.py            题目四：正确性检查与实验程序
+    ├── test_treasure_game_task4_results.md    题目四：运行结果（由上一程序生成）
+    ├── test_treasure_game_task4.png           题目四：运行结果图表（由上一程序生成）
+    ├── tt_h4_no_effect_task4.py               题目四：置换表在 H=4 时无效果的原因探究
+    ├── tt_h4_no_effect_task4_results.md       探究结果（由上一程序生成）
+    └── tt_h4_no_effect_task4.png              探究结果图表（由上一程序生成）
 
 函数文件与测试文件的分工：每道题的函数文件只包含算法、数据结构与统计工具，测试文件负责调用函数、检查结果并输出实验数据。
 
